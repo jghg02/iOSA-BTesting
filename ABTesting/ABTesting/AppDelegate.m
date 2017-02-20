@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Taplytics/Taplytics.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //Init Taplytics
+    [Taplytics startTaplyticsAPIKey:@"691c535e1b095a5bbea0dbccc508f20ea631de00"];
+    
     return YES;
 }
 
@@ -47,5 +51,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return NO;
+}
 
 @end
